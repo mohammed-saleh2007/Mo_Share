@@ -1,9 +1,11 @@
 import socket
 import tqdm
 import os
+
 # device's IP address
 SERVER_HOST = "0.0.0.0"
-SERVER_PORT = 5001
+SERVER_PORT = int(input("port?: "))
+
 # receive 4096 bytes each time
 BUFFER_SIZE = 4096
 SEPARATOR = "<SEPARATOR>"
