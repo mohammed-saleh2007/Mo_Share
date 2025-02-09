@@ -1,7 +1,7 @@
 import socket
 
 HOST = "0.0.0.0"
-PORT = int(input("Port?: ")
+PORT = int(input("Port?: "))
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
