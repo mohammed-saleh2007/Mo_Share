@@ -18,6 +18,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print("[ ! ] Terminate signal recived!")
                 break
             msg = input("\033[31;1;4m[ * ] What to send?: \033[0m")
+            msg.encode()
             print(f"[ + ] Sending: {msg}")
             conn.sendall(msg)
 
