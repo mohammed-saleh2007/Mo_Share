@@ -14,12 +14,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print("[ + ] Receiving data ...")
             msg = conn.recv(1024 * 1024 * 1024)
             print(f"\033[31;1;4m[ - ] Recieved: {msg}\033[0m")
-
-            if data == b'sudo_end':
-                print("[ ! ] No Data received")
-                print("[ - ] Closeing Connection")
-                break
-
+            if msg == "break":
+		print("[ ! ] Terminate signal recived!")
+		break
             msg = input("\033[31;1;4m[ * ] What to send?: \033[0m")
             print(f"[ + ] Sending: {msg}")
             conn.sendall(msg)
