@@ -7,9 +7,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     while True:
         user_input = input("\033[31;1;4m[ * ] What to send?: \033[0m")
-        msg = ""
         print(f"[ ! ] Connected to: {HOST}:{PORT}")
-        s.sendall(msg)
+        s.sendall(user_input)
         print("[ + ] Sending...")
         print("[ * ] Receiving data ...")
         data = s.recv(1024 * 1024 * 1024)
